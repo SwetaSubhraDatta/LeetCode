@@ -1,4 +1,5 @@
-import smbus2
+from fcntl import DN_DELETE
+
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -43,3 +44,5 @@ class Solution:
 
 Soln = Solution()
 print(Soln.length_of_longest_optimised("dvdf"))
+
+

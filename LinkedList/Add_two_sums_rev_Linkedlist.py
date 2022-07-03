@@ -1,3 +1,4 @@
+from distutils.command.install import HAS_USER_SITE
 from typing import Optional
 from LL import LL as Linkedlist
 from LL import Node as ListNode
@@ -45,16 +46,18 @@ class Solution:
             sum_ = val_l1 + val_l2 + carry
             if sum_ // 10 != 0:
                 carry = sum_ % 10
-            new_list.next = ListNode(sum_)
+            new_list.next = ListNode(sum_)  # type: ignore
             new_list = new_list.next
         return root_list
 
 
 Soln = Solution()
-ll = Linkedlist()
+ll = Linkedlist()  
 ll.push(9)
 ll.push(5)
 ll.push(4)
+
+
 
 
 Soln.addTwoNumbers(ll.start_node, l2=None)
