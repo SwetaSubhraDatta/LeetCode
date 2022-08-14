@@ -1,6 +1,3 @@
-from fcntl import DN_DELETE
-
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         s = list(s)
@@ -36,10 +33,21 @@ class Solution:
         for j in range(n):
             if s[j] in mp:
                 i = max(mp[s[j]], i)
-
             ans = max(ans, j - i + 1)
             mp[s[j]] = j + 1
         return ans
+    
+    def length_of_longest_optimised_2(self, s: str) -> int:
+        mp_distinct=set()
+        w_s=0
+        max_length=0
+        for i in range(0,len(s)):
+            while s[i] in mp_distinct:
+                mp_distinct.remove(s[w_s])
+                w_s+=1
+            mp_distinct.add(s[i])
+            max_length=max(max_length,i-w_s+1)
+        return max_length
 
 
 Soln = Solution()
