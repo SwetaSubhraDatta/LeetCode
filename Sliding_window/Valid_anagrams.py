@@ -1,6 +1,5 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-
         #edge case 1
         if s==t:
             return True

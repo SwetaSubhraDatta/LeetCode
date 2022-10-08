@@ -1,11 +1,5 @@
 # Removing duplicates from a sorted array
-def remove_duplicates_method_1(arr):
-    l=0
-    for r in range(1,len(nums)):
-        if nums[r]!=nums[l]:
-            l+=1
-            nums[l]=nums[r]
-    return l+1
+
 
 
 
